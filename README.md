@@ -3,7 +3,6 @@ Table of Contents:
 * [Exercise 1: GraalVM](#exercise-1-graalvm)
 * [Exercise 2: Microservices](#exercise-2-microservices)
 * [Exercise 3: SpringBoot](#exercise-3-springboot)
-* [Appendix: VNC](#appendix-vnc)
 
 # Exercise 1: GraalVM
 
@@ -25,7 +24,7 @@ You may want to clone the code onto your lab VM to help you follow along:
 >```
 
 You have connected to the OCI Developer Cloud Image which contains the
-Enterprise Edition of GraalVM 19.0.0 This gives us the Java and JavaScript
+Enterprise Edition of GraalVM jaeger-component: all-in-one This gives us the Java and JavaScript
 languages.
 
 To ensure that the Graal versions will be used by default when invoking `java`,
@@ -33,7 +32,7 @@ To ensure that the Graal versions will be used by default when invoking `java`,
 
 ![user input](images/userinput.png)
 >```sh
->export PATH=/opt/graalvm/graalvm-ee-19.0.0/bin:$PATH
+>export PATH=/opt/graalvm/graalvm-ee-20.1.1/bin:$PATH
 >```
 
 You can verify that the Graal versions will be used with the following commands:
@@ -46,9 +45,9 @@ You can verify that the Graal versions will be used with the following commands:
 Should output:
 
 ```
-java version "1.8.0_212"
-Java(TM) SE Runtime Environment (build 1.8.0_212-b31)
-Java HotSpot(TM) GraalVM EE 19.0.0 (build 25.212-b31-jvmci-19-b01, mixed mode)
+java version "1.8.0_261"
+Java(TM) SE Runtime Environment (build 1.8.0_261-b33)
+Java HotSpot(TM) 64-Bit Server VM GraalVM EE 20.1.1 (build 25.261-b33-jvmci-20.1-b04, mixed mode)
 ```
 
 Should output:
@@ -61,7 +60,7 @@ js --version
 Should output:
 
 ```
-GraalVM JavaScript (GraalVM EE Native 19.0.0)
+GraalVM JavaScript (GraalVM EE Native 20.1.1)
 ```
 
 ![user input](images/userinput.png)
@@ -70,18 +69,22 @@ node --version:graalvm
 ```
 
 ```
-GraalVM Polyglot Engine Version 19.0.0
-GraalVM Home /opt/graalvm/graalvm-ee-19.0.0
+GraalVM EE Native Polyglot Engine Version 20.1.1
+Java Version 1.8.0_261
+Java VM Version GraalVM 20.1.1 Java 8 EE
+GraalVM Home /Library/Java/JavaVirtualMachines/graalvm-ee-java8-20.1.1/Contents/Home
   Installed Languages:
-    JavaScript version 19.0.0
-    LLVM       version 19.0.0
-    Python     version 3.7.0
-    Ruby       version 2.6.2
+    JavaScript version 20.1.1
+    LLVM       version 20.1.1
   Installed Tools:
+    Agent Script            version 0.6
+    Code Coverage           version 0.1.0
     CPU Sampler             version 0.4.0
     CPU Tracer              version 0.3.0
     Heap Allocation Monitor version 0.1.0
+    Insight                 version 0.6
     Chrome Inspector        version 0.1
+    Language Server         version 0.1
     Memory Tracer           version 0.2
 ```
 
@@ -332,7 +335,7 @@ MB.
 	libc.so.6 => /lib64/libc.so.6 (0x00007f6bd9983000)
 	/lib64/ld-linux-x86-64.so.2 (0x00007f6bdaac8000)
 	libfreebl3.so => /lib64/libfreebl3.so (0x00007f6bd9780000)
-$ du -h topten 
+$ du -h topten
 7.2M  topten
 ```
 
